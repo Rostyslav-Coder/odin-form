@@ -1,10 +1,33 @@
+:root {
+    --light-opacity: #eeeeee1e;
+    --light: #eeeeee99;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 body {
     background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg);
     background-size: cover;
+}
+
+.container {
+    background-color: var(--light-opacity);
+    width: 70vw;
+    height: 85vh;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.container:hover {
+    background-color: var(--light);
+}
+
+label {
+    display: block;
 }
