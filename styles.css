@@ -1,9 +1,14 @@
 :root {
-    --light-opacity: #eeeeee1e;
-    --light: #ffffffdd;
+    --white-with-opacity: #eeeeee1e;
+    --white: #ffffffdd;
+    --grey-with-opecity: #12121299;
+    --grey: #333;
+    --blue-light: #2c4cdb;
+    --blue: #03017a;
 
-    font-family: 'Codystar', monospace;
+    font-family: 'REM', sans-serif;
     font-size: 10px;
+    color: var(--grey-with-opecity);
 }
 
 * {
@@ -19,42 +24,52 @@ body {
 }
 
 .container {
-    background-color: var(--light-opacity);
+    background-color: var(--white-with-opacity);
     width: 70vw;
     height: 85vh;
     margin: 25px auto;
-    padding: 25px;
+    padding: 10px 20px;
     border-radius: 12px;
 }
 
 .container:hover {
-    background-color: var(--light);
+    background-color: var(--white);
 }
 
 .container > h1 {
-    margin: 0 20px 10px;
-    font-size: 2.8rem;
+    margin: 0 0 10px;
+    font-size: 2.4rem;
+    font-weight: 800;
     text-align: justify;
+    letter-spacing: 1.6px;
 }
 
 .container > h2 {
-    margin: 0 20px 5px;
-    font-size: 2.2rem;
+    margin: 0 0 5px;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .container > h3 {
-    margin: 0 20px 10px;
-    font-size: 1.8rem;
+    margin: 0 0 5px;
+    font-size: 1.6rem;
+    font-weight: 400;
 }
 
 .fields {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 6%;
+    align-items: center;
 }
-
+.sub-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 4%;
+}
 .left-col, .right-col {
-    width: calc(48% - 30px);
+    width: 48%;
 }
 
 .label input{
@@ -62,12 +77,69 @@ body {
     height: 32px;
     font-size: 1.8rem;
     margin-bottom: 18px;
-    background-color: var(--light-opacity);
+    padding: 5px 20px;
+    background-color: var(--white-with-opacity);
+    border: 2px solid var(--grey);
+    border-radius: 12px;
+    outline: none;
+}
+
+.label input:focus {
+    border: 2px solid var(--blue-light);
+    background-color: var(--white);
+    box-shadow: 0 0 8px 1px var(--blue-light);
+    scale: 1.05;
+    transition: 0.6s;
+}
+
+.label > label {
+    color: var(--blue);
+    position: relative;
+    top: 26px;
+    left: 12px;
+    font-size: 1.6rem;
+}
+
+button {
+    width: 400px;
+    height: 28px;
+    margin: 8px auto;
+    background-color: var(--white-with-opacity);
+    border: 2px solid var(--grey);
+    border-radius: 14px;
+    color: var(--blue);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+    transition: 0.6s;
 }
 
 .break-line {
-    width: calc(100% - 40px);
-    margin: 8px auto;
-    border: 2px solid black;
+    width: 100%;
+    margin: 4px auto;
+    border: 2px solid var(--grey-with-opecity);
     border-radius: 2px;
+}
+
+h3 > a {
+    color: var(--blue);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.link, .copy {
+    color: var(--white);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.link > a, .copy > a {
+    text-decoration: none;
+    color: var(--white);
 }
