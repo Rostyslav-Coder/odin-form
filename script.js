@@ -32,7 +32,27 @@ const LABEL_LIST = [
     phoneNumberLabel,
     passwordLabel,
     confirmPasswordLabel
-]
+];
+
+const INPUTS_LIST = [
+    {input: firstNameInput, label: firstNameLabel},
+    {input: lastNameInput, label: lastNameLabel},
+    {input: emailInput, label: emailLabel},
+    {input: phoneNumberInput, label: phoneNumberLabel},
+    {input: passwordInput, label: passwordLabel},
+    {input: confirmPasswordInput, label: confirmPasswordLabel}
+];
+
+// functions
+INPUTS_LIST.forEach(({input, label}) => {
+    input.addEventListener('focus', function() {
+        container.style.backgroundColor = WHITE;
+        label.style.position = 'absolute';
+        label.style.top = '-4px';
+        label.style.color = BLUE;
+        label.style.transition = '0.3s';
+    });
+});
 
 container.addEventListener('mouseenter', function() {
     container.style.backgroundColor = (WHITE);
@@ -50,51 +70,4 @@ container.addEventListener('mouseleave', function() {
         LABEL_LIST[i].style.color = (GREY_WITH_OPACITY);
         LABEL_LIST[i].style.transition = ('0.3s');
     };
-});
-
-firstNameInput.addEventListener('focus', function() {
-    firstNameLabel.style.position = ('absolute');
-    firstNameLabel.style.top = ('-4px');
-    firstNameLabel.style.color = (BLUE);
-    firstNameLabel.style.transition = ('0.3s');
-});
-
-lastNameInput.addEventListener('focus', function() {
-    container.style.backgroundColor = (WHITE);
-    lastNameLabel.style.position = ('absolute');
-    lastNameLabel.style.top = ('-4px');
-    lastNameLabel.style.color = (BLUE);
-    lastNameLabel.style.transition = ('0.3s');
-});
-
-emailInput.addEventListener('focus', function() {
-    container.style.backgroundColor = (WHITE);
-    emailLabel.style.position = ('absolute');
-    emailLabel.style.top = ('-4px');
-    emailLabel.style.color = (BLUE);
-    emailLabel.style.transition = ('0.3s');
-});
-
-phoneNumberInput.addEventListener('focus', function() {
-    container.style.backgroundColor = (WHITE);
-    phoneNumberLabel.style.position = ('absolute');
-    phoneNumberLabel.style.top = ('-4px');
-    phoneNumberLabel.style.color = (BLUE);
-    phoneNumberLabel.style.transition = ('0.3s');
-});
-
-passwordInput.addEventListener('focus', function() {
-    container.style.backgroundColor = (WHITE);
-    passwordLabel.style.position = ('absolute');
-    passwordLabel.style.top = ('-4px');
-    passwordLabel.style.color = (BLUE);
-    passwordLabel.style.transition = ('0.3s');
-});
-
-confirmPasswordInput.addEventListener('focus', function() {
-    container.style.backgroundColor = (WHITE);
-    confirmPasswordLabel.style.position = ('absolute');
-    confirmPasswordLabel.style.top = ('-4px');
-    confirmPasswordLabel.style.color = (BLUE);
-    confirmPasswordLabel.style.transition = ('0.3s');
 });
