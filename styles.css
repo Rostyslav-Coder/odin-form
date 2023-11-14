@@ -1,6 +1,9 @@
 :root {
     --light-opacity: #eeeeee1e;
-    --light: #eeeeee99;
+    --light: #ffffffdd;
+
+    font-family: 'Codystar', monospace;
+    font-size: 10px;
 }
 
 * {
@@ -28,6 +31,43 @@ body {
     background-color: var(--light);
 }
 
-label {
-    display: block;
+.container > h1 {
+    margin: 0 20px 10px;
+    font-size: 2.8rem;
+    text-align: justify;
+}
+
+.container > h2 {
+    margin: 0 20px 5px;
+    font-size: 2.2rem;
+}
+
+.container > h3 {
+    margin: 0 20px 10px;
+    font-size: 1.8rem;
+}
+
+.fields {
+    display: flex;
+    justify-content: center;
+    gap: 6%;
+}
+
+.left-col, .right-col {
+    width: calc(48% - 30px);
+}
+
+.label input{
+    width: 100%;
+    height: 32px;
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    background-color: var(--light-opacity);
+}
+
+.break-line {
+    width: calc(100% - 40px);
+    margin: 8px auto;
+    border: 2px solid black;
+    border-radius: 2px;
 }
