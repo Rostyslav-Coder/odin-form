@@ -98,7 +98,7 @@ body {
 }
 
 .label > label {
-    color: var(--blue-light);
+    color: var(--grey-with-opecity);
     position: absolute;
     top: 26px;
     left: 12px;
@@ -123,6 +123,7 @@ button:hover {
     color: var(--white);
     border-color: var(--blue-light);
     transition: 0.6s;
+    cursor: pointer;
 }
 
 .break-line {
