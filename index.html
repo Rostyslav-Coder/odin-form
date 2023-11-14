@@ -4,19 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Codystar&display=swap">
     <title>Odin form</title>
 </head>
 <body>
     <div class="container">
-        <h1>Let`s do this!</h1>
+        <h1>
+            This is not real online service! You know you need something
+            like this in your life to help you realize your deepest dreams.<br/>
+            Sign up <em>now</em> to get started.
+        </h1>
+        <h2>You <em>know</em> you want to.</h2>
+        <div class="break-line"></div>
+        <h3>Let's do this!</h3>
         <form action="" method="post" class="form">
-            <label for="f-name">First Name<input type="text" id="f-name"></label>
-            <label for="l-name">Last Name<input type="text" id="l-name"></label>
-            <label for="email">Email<input type="email" id="email"></label>
-            <label for="ph-num">Phone Number<input type="number" id="ph-num"></label>
-            <label for="psw">Password<input type="password" id="psw"></label>
-            <label for="cnf-psw">Confirm Password<input type="text" id="cnf-psw"></label>
+            <div class="fields">
+                <div class="left-col">
+                    <div class="label">
+                        <label for="f-name">First Name<input type="text" id="f-name"></label>
+                    </div>
+                    <div class="label">
+                        <label for="email">Email<input type="email" id="email"></label>
+                    </div>
+                    <div class="label">
+                        <label for="psw">Password<input type="password" id="psw"></label>
+                    </div>
+                </div>
+                <div class="right-col">
+                    <div class="label">
+                        <label for="l-name">Last Name<input type="text" id="l-name"></label>
+                    </div>
+                    <div class="label">
+                        <label for="ph-num">Phone Number<input type="number" id="ph-num"></label>
+                    </div>
+                    <div class="label">
+                        <label for="cnf-psw">Confirm Password<input type="text" id="cnf-psw"></label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Create Account</button>
         </form>
+        <div class="break-line"></div>
+        <h3>Already have an account? <a href="">Log In</a></h3>
     </div>
     <div class="link">Photo by <a href="https://pixabay.com/users/felixmittermeier-4397258/">FelixMittermeier</a></div>
 </body>
