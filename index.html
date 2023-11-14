@@ -10,7 +10,7 @@
     <title>Odin form</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <h1>
             This is not real online service! You know you need something
             like this in your life to help you realize your deepest dreams.<br/>
@@ -19,35 +19,35 @@
         <h2>You <em>know</em> you want to.</h2>
         <div class="break-line"></div>
         <h3>Let's do this!</h3>
-        <form action="" method="post" class="form">
+        <form action="#" method="post" class="form">
             <div class="fields">
                 <div class="sub-container">
                     <div class="left-col">
                         <div class="label">
-                            <label for="f-name">First Name</label>
+                            <label for="f-name" id="f-name-lab">First Name</label>
                             <input type="text" id="f-name">
                         </div>
                         <div class="label">
-                            <label for="email">Email</label>
+                            <label for="email" id="email-lab">Email</label>
                             <input type="email" id="email">
                         </div>
                         <div class="label">
-                            <label for="psw">Password</label>
+                            <label for="psw" id="psw-lab">Password</label>
                             <input type="password" id="psw">
                         </div>
                     </div>
                     <div class="right-col">
                         <div class="label">
-                            <label for="l-name">Last Name</label>
+                            <label for="l-name" id="l-name-lab">Last Name</label>
                             <input type="text" id="l-name">
                         </div>
                         <div class="label">
-                            <label for="ph-num">Phone Number</label>
+                            <label for="ph-num" id="ph-num-lab">Phone Number</label>
                             <input type="number" id="ph-num">
                         </div>
                         <div class="label">
-                            <label for="cnf-psw">Confirm Password</label>
-                            <input type="text" id="cnf-psw">
+                            <label for="cnf-psw" id="cnf-psw-lab">Confirm Password</label>
+                            <input type="password" id="cnf-psw">
                         </div>
                     </div>
                 </div>
