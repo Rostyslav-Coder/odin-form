@@ -17,50 +17,84 @@ let phoneNumberLabel = document.querySelector('#ph-num-lab');
 let passwordLabel = document.querySelector('#psw-lab');
 let confirmPasswordLabel = document.querySelector('#cnf-psw-lab');
 
+// Declare and initialize color variables
+const WHITE_WITH_OPACITY = '#eeeeee1e';
+const WHITE = '#ffffffdd';
+const GREY_WITH_OPACITY = '#12121299';
+const GREY = '#333';
+const BLUE_LIGHT = '#2c4cdb';
+const BLUE = '#03017a';
+
+const LABEL_LIST = [
+    firstNameLabel,
+    lastNameLabel,
+    emailLabel,
+    phoneNumberLabel,
+    passwordLabel,
+    confirmPasswordLabel
+]
+
+container.addEventListener('mouseenter', function() {
+    container.style.backgroundColor = (WHITE);
+
+    for ( let i = 0; i < LABEL_LIST.length; i++ ) {
+        LABEL_LIST[i].style.color = (BLUE_LIGHT);
+        LABEL_LIST[i].style.transition = ('0.3s');
+    };
+});
+
+container.addEventListener('mouseleave', function() {
+    container.style.backgroundColor = (WHITE_WITH_OPACITY);
+
+    for ( let i = 0; i < LABEL_LIST.length; i++ ) {
+        LABEL_LIST[i].style.color = (GREY_WITH_OPACITY);
+        LABEL_LIST[i].style.transition = ('0.3s');
+    };
+});
+
 firstNameInput.addEventListener('focus', function() {
-    container.style.backgroundColor = ('#ffffffdd');
     firstNameLabel.style.position = ('absolute');
     firstNameLabel.style.top = ('-4px');
-    firstNameLabel.style.color = ('#03017a');
+    firstNameLabel.style.color = (BLUE);
     firstNameLabel.style.transition = ('0.3s');
 });
 
 lastNameInput.addEventListener('focus', function() {
-    container.style.backgroundColor = ('#ffffffdd');
+    container.style.backgroundColor = (WHITE);
     lastNameLabel.style.position = ('absolute');
     lastNameLabel.style.top = ('-4px');
-    lastNameLabel.style.color = ('#03017a');
+    lastNameLabel.style.color = (BLUE);
     lastNameLabel.style.transition = ('0.3s');
 });
 
 emailInput.addEventListener('focus', function() {
-    container.style.backgroundColor = ('#ffffffdd');
+    container.style.backgroundColor = (WHITE);
     emailLabel.style.position = ('absolute');
     emailLabel.style.top = ('-4px');
-    emailLabel.style.color = ('#03017a');
+    emailLabel.style.color = (BLUE);
     emailLabel.style.transition = ('0.3s');
 });
 
 phoneNumberInput.addEventListener('focus', function() {
-    container.style.backgroundColor = ('#ffffffdd');
+    container.style.backgroundColor = (WHITE);
     phoneNumberLabel.style.position = ('absolute');
     phoneNumberLabel.style.top = ('-4px');
-    phoneNumberLabel.style.color = ('#03017a');
+    phoneNumberLabel.style.color = (BLUE);
     phoneNumberLabel.style.transition = ('0.3s');
 });
 
 passwordInput.addEventListener('focus', function() {
-    container.style.backgroundColor = ('#ffffffdd');
+    container.style.backgroundColor = (WHITE);
     passwordLabel.style.position = ('absolute');
     passwordLabel.style.top = ('-4px');
-    passwordLabel.style.color = ('#03017a');
+    passwordLabel.style.color = (BLUE);
     passwordLabel.style.transition = ('0.3s');
 });
 
 confirmPasswordInput.addEventListener('focus', function() {
-    container.style.backgroundColor = ('#ffffffdd');
+    container.style.backgroundColor = (WHITE);
     confirmPasswordLabel.style.position = ('absolute');
     confirmPasswordLabel.style.top = ('-4px');
-    confirmPasswordLabel.style.color = ('#03017a');
+    confirmPasswordLabel.style.color = (BLUE);
     confirmPasswordLabel.style.transition = ('0.3s');
 });
