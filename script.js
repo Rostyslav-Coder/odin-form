@@ -1,7 +1,7 @@
 // Odin-form script
 
 // Declare and initialize color variables
-const BACKGROUND = '#fff';
+const WHITE = '#fff';
 const LIGHT = '#ddd';
 const DARK = '#555';
 const BLUE = '#2c4cdb';
@@ -66,12 +66,12 @@ const INPUTS_LIST = [
 // function
 INPUTS_LIST.forEach(({input, label, validate}) => {
     input.addEventListener('focus', function() {
-        fokus(label);
+        fokus(input, label);
     });
 
     input.addEventListener('blur', function() {
         if ( input.value.trim() === '') {
-            unfocus(label);
+            unfocus(input, label);
         } else {
             let isValid = validate(input.value.trim());
             if ( isValid ) {
@@ -83,28 +83,33 @@ INPUTS_LIST.forEach(({input, label, validate}) => {
     });
 });
 
-const fokus = (label) => {
+const fokus = (input, label) => {
     console.log(label);
+    input.style.boxShadow = '0 0 8px 1px' + BLUE;
+    input.style.border = '2px solid' + BLUE;
     label.style.top = '-4px';
     label.style.color = BLUE;
     label.style.transition = '0.3s';
     console.log(label);
 };
 
-const unfocus = (label) => {
+const unfocus = (input ,label) => {
+    input.style.boxShadow = '';
+    input.style.border = '2px solid' + DARK;
     label.style.top = '';
     label.style.color = '';
 };
 
 const validInput = (input, label) => {
-    input.style.borderColor = BACKGROUND;
+    // input.style.backgroundColor = WHITE;
+    input.style.borderColor = WHITE;
     input.style.boxShadow = '0 0 8px 1px' + BLUE;
     label.style.color = BLUE;
 };
 
 const invalidInput = (input, label) => {
-    input.style.backgroundColor = RED;
-    input.style.borderColor = BACKGROUND;
+    // input.style.backgroundColor = RED;
+    input.style.borderColor = WHITE;
     input.style.boxShadow = '0 0 8px 1px' + RED;
     label.style.color = RED;
 };
