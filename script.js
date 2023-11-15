@@ -1,8 +1,6 @@
 // Odin-form script
 
 // Declare and initialize variables
-let container = document.querySelector('#container');
-
 let firstNameInput = document.querySelector('#f-name');
 let lastNameInput = document.querySelector('#l-name');
 let emailInput = document.querySelector('#email');
@@ -18,22 +16,14 @@ let passwordLabel = document.querySelector('#psw-lab');
 let confirmPasswordLabel = document.querySelector('#cnf-psw-lab');
 
 // Declare and initialize color variables
-const WHITE_WITH_OPACITY = '#eeeeee1e';
-const WHITE = '#ffffffdd';
-const GREY_WITH_OPACITY = '#12121299';
-const GREY = '#333';
-const BLUE_LIGHT = '#2c4cdb';
-const BLUE = '#03017a';
+const BACKGROUND = '#fff';
+const LIGHT = '#ddd';
+const DARK = '#555';
+const BLUE = '#2c4cdb';
+const RED = '#f93a3a';
 
-const LABEL_LIST = [
-    firstNameLabel,
-    lastNameLabel,
-    emailLabel,
-    phoneNumberLabel,
-    passwordLabel,
-    confirmPasswordLabel
-];
 
+// Vizualization function
 const INPUTS_LIST = [
     {input: firstNameInput, label: firstNameLabel},
     {input: lastNameInput, label: lastNameLabel},
@@ -43,31 +33,43 @@ const INPUTS_LIST = [
     {input: confirmPasswordInput, label: confirmPasswordLabel}
 ];
 
-// functions
 INPUTS_LIST.forEach(({input, label}) => {
     input.addEventListener('focus', function() {
-        container.style.backgroundColor = WHITE;
         label.style.position = 'absolute';
         label.style.top = '-4px';
         label.style.color = BLUE;
         label.style.transition = '0.3s';
     });
+
+    input.addEventListener('blur', function() {
+        label.style.position = '';
+        label.style.top = '';
+        label.style.color = '';
+    });
 });
 
-container.addEventListener('mouseenter', function() {
-    container.style.backgroundColor = (WHITE);
 
-    for ( let i = 0; i < LABEL_LIST.length; i++ ) {
-        LABEL_LIST[i].style.color = (BLUE_LIGHT);
-        LABEL_LIST[i].style.transition = ('0.3s');
-    };
+// Validate functions
+firstNameInput.addEventListener('keydown', function() {
+    const value = firstNameInput.value.trim();
+    if ( !/^[a-zA-z\s]*$/.test(value)) {
+        invalidFirstName();
+    } else {
+        validFirstName();
+    }
 });
 
-container.addEventListener('mouseleave', function() {
-    container.style.backgroundColor = (WHITE_WITH_OPACITY);
+const validFirstName = () => {
+    firstNameInput.style.borderColor = BACKGROUND;
+    firstNameInput.style.boxShadow = '0 0 8px 1px BLUE';
+    firstNameLabel.innerText = 'First Name';
+    firstNameLabel.style.color = BLUE;
+};
 
-    for ( let i = 0; i < LABEL_LIST.length; i++ ) {
-        LABEL_LIST[i].style.color = (GREY_WITH_OPACITY);
-        LABEL_LIST[i].style.transition = ('0.3s');
-    };
-});
+const invalidFirstName = () => {
+    firstNameInput.style.backgroundColor = RED;
+    firstNameInput.style.borderColor = BACKGROUND;
+    firstNameInput.style.boxShadow = '0 0 8px 1px RED';
+    firstNameLabel.innerText = 'Use only letters';
+    firstNameLabel.style.color = RED;
+};
