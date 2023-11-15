@@ -3,6 +3,7 @@
     --light: #ddd;
     --dark: #555;
     --blue: #2c4cdb;
+    --red: #f93a3a;
 
     font-family: 'REM', sans-serif;
     font-size: 10px;
@@ -13,6 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -29,7 +31,18 @@ body {
     border-radius: 12px;
 }
 
+.container > h1 > img {
+    display: block;
+    width: 10%;
+    padding: 5px;
+    background-color: var(--dark);
+}
+
 .container > h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3%;
     margin: 0 0 10px;
     font-size: 2.4rem;
     font-weight: 800;
@@ -98,6 +111,10 @@ body {
     top: 26px;
     left: 12px;
     font-size: 1.6rem;
+}
+
+.label > label > span {
+    color: var(--red);
 }
 
 button {
