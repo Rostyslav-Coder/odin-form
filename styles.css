@@ -1,21 +1,18 @@
 :root {
-    --white-with-opacity: #eeeeee1e;
-    --white: #ffffffdd;
-    --grey-with-opecity: #12121299;
-    --grey: #333;
-    --blue-light: #2c4cdb;
-    --blue: #03017a;
+    --background: #fff;
+    --light: #ddd;
+    --dark: #555;
+    --blue: #2c4cdb;
 
     font-family: 'REM', sans-serif;
     font-size: 10px;
-    color: var(--grey-with-opecity);
+    color: var(--dark);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid red; */
 }
 
 body {
@@ -24,16 +21,12 @@ body {
 }
 
 .container {
-    background-color: var(--white-with-opacity);
+    background-color: var(--background);
     width: 70vw;
     height: 85vh;
     margin: 25px auto;
     padding: 10px 20px;
     border-radius: 12px;
-}
-
-.container:hover {
-    background-color: var(--white);
 }
 
 .container > h1 {
@@ -62,12 +55,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .sub-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 4%;
 }
+
 .left-col, .right-col {
     width: 48%;
 }
@@ -83,22 +78,22 @@ body {
     margin-top: 20px;
     margin-bottom: 18px;
     padding: 5px 20px;
-    background-color: var(--white-with-opacity);
-    border: 2px solid var(--grey);
+    background-color: var(--light);
+    border: 2px solid var(--dark);
     border-radius: 12px;
     outline: none;
 }
 
 .label input:focus {
-    border: 2px solid var(--blue-light);
-    background-color: var(--white);
-    box-shadow: 0 0 8px 1px var(--blue-light);
+    border: 2px solid var(--blue);
+    background-color: var(--background);
+    box-shadow: 0 0 8px 1px var(--blue);
     scale: 1.05;
     transition: 0.6s;
 }
 
 .label > label {
-    color: var(--grey-with-opecity);
+    color: var(--dark);
     position: absolute;
     top: 26px;
     left: 12px;
@@ -109,19 +104,19 @@ button {
     width: 400px;
     height: 28px;
     margin: 8px auto;
-    background-color: var(--white-with-opacity);
-    border: 2px solid var(--grey);
+    background-color: var(--background);
+    border: 2px solid var(--dark);
     border-radius: 14px;
-    color: var(--blue-light);
+    color: var(--blue);
     font-size: 1.6rem;
     font-weight: 600;
     text-transform: uppercase;
 }
 
 button:hover {
-    background-color: var(--blue-light);
-    color: var(--white);
-    border-color: var(--blue-light);
+    background-color: var(--blue);
+    color: var(--background);
+    border-color: var(--blue);
     transition: 0.6s;
     cursor: pointer;
 }
@@ -129,7 +124,7 @@ button:hover {
 .break-line {
     width: 100%;
     margin: 4px auto;
-    border: 2px solid var(--grey-with-opecity);
+    border: 2px solid var(--dark);
     border-radius: 2px;
 }
 
@@ -140,12 +135,12 @@ h3 > a {
 }
 
 .link, .copy {
-    color: var(--white);
+    color: var(--background);
     text-align: center;
     font-size: 1.2rem;
 }
 
 .link > a, .copy > a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--background);
 }
