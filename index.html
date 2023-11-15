@@ -12,9 +12,10 @@
 <body>
     <div class="container" id="container">
         <h1>
-            This is not real online service! You know you need something
-            like this in your life to help you realize your deepest dreams.<br/>
-            Sign up <em>now</em> to get started.
+            <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png" alt="odin logo">
+            This is not a real online service! This is a sign-up form for 'The Odin
+            Project' to study &lt;form&gt; element, their properties and capabilities.<br/>
+            Sign up now to get started.
         </h1>
         <h2>You <em>know</em> you want to.</h2>
         <div class="break-line"></div>
@@ -24,16 +25,16 @@
                 <div class="sub-container">
                     <div class="left-col">
                         <div class="label">
-                            <label for="f-name" id="f-name-lab">First Name</label>
-                            <input type="text" id="f-name" name="firstName">
+                            <label for="f-name" id="f-name-lab">First Name <span>*</span></label>
+                            <input type="text" id="f-name" name="firstName" required>
                         </div>
                         <div class="label">
-                            <label for="email" id="email-lab">Email</label>
-                            <input type="email" id="email" name="email">
+                            <label for="email" id="email-lab">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="label">
-                            <label for="psw" id="psw-lab">Password</label>
-                            <input type="password" id="psw" name="password">
+                            <label for="psw" id="psw-lab">Password <span>*</span></label>
+                            <input type="password" id="psw" name="password" required>
                         </div>
                     </div>
                     <div class="right-col">
@@ -46,12 +47,12 @@
                             <input type="tel" id="ph-num" name="phoneNumber">
                         </div>
                         <div class="label">
-                            <label for="cnf-psw" id="cnf-psw-lab">Confirm Password</label>
-                            <input type="password" id="cnf-psw" name="confirmPassword">
+                            <label for="cnf-psw" id="cnf-psw-lab">Confirm Password <span>*</span></label>
+                            <input type="password" id="cnf-psw" name="confirmPassword" required>
                         </div>
                     </div>
                 </div>
-                <button type="submit">Create Account</button>
+                <button type="submit" id="submit">Create Account</button>
             </div>
         </form>
         <div class="break-line"></div>
