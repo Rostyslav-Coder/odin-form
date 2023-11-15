@@ -1,5 +1,12 @@
 // Odin-form script
 
+// Declare and initialize color variables
+const BACKGROUND = '#fff';
+const LIGHT = '#ddd';
+const DARK = '#555';
+const BLUE = '#2c4cdb';
+const RED = '#f93a3a';
+
 // Declare and initialize variables
 let firstNameInput = document.querySelector('#f-name');
 let lastNameInput = document.querySelector('#l-name');
@@ -15,61 +22,89 @@ let phoneNumberLabel = document.querySelector('#ph-num-lab');
 let passwordLabel = document.querySelector('#psw-lab');
 let confirmPasswordLabel = document.querySelector('#cnf-psw-lab');
 
-// Declare and initialize color variables
-const BACKGROUND = '#fff';
-const LIGHT = '#ddd';
-const DARK = '#555';
-const BLUE = '#2c4cdb';
-const RED = '#f93a3a';
+// Validate functions
+let validateFirstName = (value) => {
+    value = value.trim();
+    return /^[a-zA-z\s]*$/.test(value); 
+};
 
+let validateLastName = (value) => {
+    value = value.trim();
+    return /^[a-zA-z\s]*$/.test(value);
+};
 
-// Vizualization function
+let validateEmail = (value) => {
+    value = value.trim();
+    return /^\S+@\S+.\S+$/.test(value);
+};
+
+let validatePhoneNumber = (value) => {
+    value = value.trim();
+    return /^\+\d{2}\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}$/.test(value);
+};
+
+let validatePassword = (value) => {
+    value = value.trim();
+    return value.length >= 8;
+};
+
+let validateConfirmPassword = (value) => {
+    value = value.trim();
+    return value === passwordInput.value.trim();
+};
+
 const INPUTS_LIST = [
-    {input: firstNameInput, label: firstNameLabel},
-    {input: lastNameInput, label: lastNameLabel},
-    {input: emailInput, label: emailLabel},
-    {input: phoneNumberInput, label: phoneNumberLabel},
-    {input: passwordInput, label: passwordLabel},
-    {input: confirmPasswordInput, label: confirmPasswordLabel}
+    {input: firstNameInput, label: firstNameLabel, validate: validateFirstName},
+    {input: lastNameInput, label: lastNameLabel, validate: validateLastName},
+    {input: emailInput, label: emailLabel, validate: validateEmail},
+    {input: phoneNumberInput, label: phoneNumberLabel, validate: validatePhoneNumber},
+    {input: passwordInput, label: passwordLabel, validate: validatePassword},
+    {input: confirmPasswordInput, label: confirmPasswordLabel, validate: validateConfirmPassword}
 ];
 
-INPUTS_LIST.forEach(({input, label}) => {
+
+// function
+INPUTS_LIST.forEach(({input, label, validate}) => {
     input.addEventListener('focus', function() {
-        label.style.position = 'absolute';
-        label.style.top = '-4px';
-        label.style.color = BLUE;
-        label.style.transition = '0.3s';
+        fokus(label);
     });
 
     input.addEventListener('blur', function() {
-        label.style.position = '';
-        label.style.top = '';
-        label.style.color = '';
+        if ( input.value.trim() === '') {
+            unfocus(label);
+        } else {
+            let isValid = validate(input.value.trim());
+            if ( isValid ) {
+                validInput(input, label);
+            } else {
+                invalidInput(input, label);
+            }
+        }
     });
 });
 
-
-// Validate functions
-firstNameInput.addEventListener('keydown', function() {
-    const value = firstNameInput.value.trim();
-    if ( !/^[a-zA-z\s]*$/.test(value)) {
-        invalidFirstName();
-    } else {
-        validFirstName();
-    }
-});
-
-const validFirstName = () => {
-    firstNameInput.style.borderColor = BACKGROUND;
-    firstNameInput.style.boxShadow = '0 0 8px 1px BLUE';
-    firstNameLabel.innerText = 'First Name';
-    firstNameLabel.style.color = BLUE;
+const fokus = (label) => {
+    console.log(label);
+    label.style.top = '-4px';
+    label.style.color = BLUE;
+    label.style.transition = '0.3s';
+    console.log(label);
 };
 
-const invalidFirstName = () => {
-    firstNameInput.style.backgroundColor = RED;
-    firstNameInput.style.borderColor = BACKGROUND;
-    firstNameInput.style.boxShadow = '0 0 8px 1px RED';
-    firstNameLabel.innerText = 'Use only letters';
-    firstNameLabel.style.color = RED;
+const unfocus = (label) => {
+    label.style.top = '';
+    label.style.color = '';
+};
+
+const validInput = (input, label) => {
+    input.style.borderColor = BACKGROUND;
+    input.style.boxShadow = '0 0 8px 1px' + BLUE;
+    label.style.color = BLUE;
+};
+
+const invalidInput = (input, label) => {
+    input.style.backgroundColor = RED;
+    input.style.borderColor = BACKGROUND;
+    input.style.boxShadow = '0 0 8px 1px' + RED;
+    label.style.color = RED;
 };
