@@ -22,6 +22,8 @@ let phoneNumberLabel = document.querySelector('#ph-num-lab');
 let passwordLabel = document.querySelector('#psw-lab');
 let confirmPasswordLabel = document.querySelector('#cnf-psw-lab');
 
+let submitButton = document.querySelector('#submit');
+
 // Validate functions
 let validateFirstName = (value) => {
     value = value.trim();
@@ -62,6 +64,12 @@ const INPUTS_LIST = [
     {input: confirmPasswordInput, label: confirmPasswordLabel, validate: validateConfirmPassword}
 ];
 
+const REQUIRED_LIST = [
+    firstNameInput,
+    emailInput,
+    passwordInput,
+    confirmPasswordInput
+];
 
 // function
 INPUTS_LIST.forEach(({input, label, validate}) => {
